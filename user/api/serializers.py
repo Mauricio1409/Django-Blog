@@ -13,3 +13,16 @@ class RegisterUserSerializer(ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
+    
+
+class UserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id','username', 'email']
+
+
+class UserUpdateSerializer(ModelSerializer):
+    class Meta:
+        model=User
+        fields = ['first_name', 'last_name']
+        
